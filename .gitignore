@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# Editors
+.idea/
+.vscode/
+
+# Per-user tool data: projects hold downloads, results and backups (can be GBs)
+projects/

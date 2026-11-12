@@ -1,0 +1,33 @@
+[project]
+name = "volumetric-sheet-compressor"
+version = "0.1.0"
+description = "Find, compress and re-map Tabletop Simulator decksheets"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "pillow>=11",
+    "numpy>=2",
+    "scipy>=1.13",
+    "pyoxipng>=9",
+    "ssimulacra2==0.3.0",
+]
+
+[project.optional-dependencies]
+gui = ["PySide6-Essentials>=6.9"]
+dev = ["pytest>=8", "pyflakes>=3"]
+
+[project.scripts]
+vsc = "vsc.cli:main"
+
+[project.gui-scripts]
+vsc-gui = "vsc.gui.app:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["vsc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
